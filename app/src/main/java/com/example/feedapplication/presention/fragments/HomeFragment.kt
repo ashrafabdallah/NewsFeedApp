@@ -167,7 +167,7 @@ class HomeFragment : Fragment() {
             }
             Log.i("TAGG", sizeOfListItem.toString())
             Log.i("PAGE", current_page.toString())
-            Toast.makeText(context, "Current Page " + current_page, Toast.LENGTH_LONG).show()
+
 
         }
     }
