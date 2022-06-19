@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/ProjectsKotlin/FeedApplication/app/src/main/res/drawable/home.xml" value="0.1595" />
+        <entry key="..\:/ProjectsKotlin/FeedApplication/app/src/main/res/drawable/ic_triangle.xml" value="0.1" />
+        <entry key="..\:/ProjectsKotlin/FeedApplication/app/src/main/res/font/fonts.xml" value="0.215625" />
+        <entry key="..\:/ProjectsKotlin/FeedApplication/app/src/main/res/layout/activity_main.xml" value="0.21" />
+        <entry key="..\:/ProjectsKotlin/FeedApplication/app/src/main/res/layout/favorit_item.xml" value="0.22" />
+        <entry key="..\:/ProjectsKotlin/FeedApplication/app/src/main/res/layout/fragment_favorits.xml" value="0.14628623188405798" />
+        <entry key="..\:/ProjectsKotlin/FeedApplication/app/src/main/res/layout/fragment_home.xml" value="0.14628623188405798" />
+        <entry key="..\:/ProjectsKotlin/FeedApplication/app/src/main/res/layout/fragment_news_details.xml" value="0.16" />
+        <entry key="..\:/ProjectsKotlin/FeedApplication/app/src/main/res/layout/fragment_web_page.xml" value="0.18645833333333334" />
+        <entry key="..\:/ProjectsKotlin/FeedApplication/app/src/main/res/layout/home_item.xml" value="0.25" />
+        <entry key="..\:/ProjectsKotlin/FeedApplication/app/src/main/res/layout/news_items.xml" value="0.18" />
+        <entry key="..\:/ProjectsKotlin/FeedApplication/app/src/main/res/menu/item.xml" value="0.1" />
+        <entry key="..\:/ProjectsKotlin/FeedApplication/app/src/main/res/menu/menu_item.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

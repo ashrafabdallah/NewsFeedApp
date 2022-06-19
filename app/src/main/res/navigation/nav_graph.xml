@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.feedapplication.presention.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_favoritsFragment"
+            app:destination="@id/favoritsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_newsDetailsFragment"
+            app:destination="@id/newsDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritsFragment"
+        android:name="com.example.feedapplication.presention.fragments.FavoritsFragment"
+        android:label="fragment_favorits"
+        tools:layout="@layout/fragment_favorits" >
+        <action
+            android:id="@+id/action_favoritsFragment_to_newsDetailsFragment"
+            app:destination="@id/newsDetailsFragment" />
+        <action
+            android:id="@+id/action_favoritsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetailsFragment"
+        android:name="com.example.feedapplication.presention.fragments.NewsDetailsFragment"
+        android:label="fragment_news_details"
+        tools:layout="@layout/fragment_news_details" >
+        <argument
+            android:defaultValue="@null"
+            app:nullable="true"
+            android:name="favoritData"
+            app:argType="com.example.feedapplication.data.model.Result" />
+        <argument
+            android:defaultValue="@null"
+            app:nullable="true"
+            android:name="HometData"
+            app:argType="com.example.feedapplication.data.model.Result" />
+        <action
+            android:id="@+id/action_newsDetailsFragment_to_webPageFragment"
+            app:destination="@id/webPageFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/webPageFragment"
+        android:name="com.example.feedapplication.presention.fragments.WebPageFragment"
+        android:label="fragment_web_page"
+        tools:layout="@layout/fragment_web_page" >
+        <argument
+            android:defaultValue="@null"
+            app:nullable="true"
+            android:name="url"
+            app:argType="string" />
+    </fragment>
+</navigation>
