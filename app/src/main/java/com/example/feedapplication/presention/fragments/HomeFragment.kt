@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.feedapplication.R
+import com.example.feedapplication.data.model.Result
 import com.example.feedapplication.databinding.ActivityMainBinding
 import com.example.feedapplication.databinding.FragmentHomeBinding
 import com.example.feedapplication.presention.MainActivity
@@ -35,7 +36,7 @@ class HomeFragment : Fragment() {
     private var isScroling = false
     private var isLoading = false
     private var isLastPage = false
-
+    private var resultData: List<Result> = emptyList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -97,7 +98,8 @@ class HomeFragment : Fragment() {
                 is Resource.Success -> {
                     hideProgressBar()
                     response.data?.let {
-                        homeAdapter.differ.submitList(it.response.results)
+                        resultData =resultData + it.response.results
+                        homeAdapter.differ.submitList(resultData)
 
                         Log.i("T", homeAdapter.differ.currentList.size.toString())
 
