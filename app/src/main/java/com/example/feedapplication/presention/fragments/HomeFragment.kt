@@ -37,7 +37,7 @@ class HomeFragment : Fragment() {
     private var isLoading = false
     private var isLastPage = false
     private var resultData: List<Result> = emptyList()
-
+    private var isShow = true
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -93,12 +93,20 @@ class HomeFragment : Fragment() {
 
             when (response) {
                 is Resource.Loading -> {
-                    showProgressBar()
+
+                    if(isShow){
+
+                        showProgressBar()
+                    }else{
+                        hideProgressBar()
+                    }
+
                 }
                 is Resource.Success -> {
+                    binding.progressPagging.visibility = View.GONE
                     hideProgressBar()
                     response.data?.let {
-                        resultData =resultData + it.response.results
+                        resultData = resultData + it.response.results
                         homeAdapter.differ.submitList(resultData)
 
                         Log.i("T", homeAdapter.differ.currentList.size.toString())
@@ -118,6 +126,7 @@ class HomeFragment : Fragment() {
                     }
                 }
                 is Resource.Error -> {
+                    binding.progressPagging.visibility = View.GONE
                     hideProgressBar()
                     response.message?.let {
                         Toast.makeText(context, "${it}", Toast.LENGTH_LONG).show()
@@ -163,6 +172,8 @@ class HomeFragment : Fragment() {
                 startingPostionof_visible_Item + visibleItemcount >= sizeOfListItem
             val shouldPaginate = !isLoading && !isLastPage && hasReachedToEnd && isScroling
             if (shouldPaginate) {
+                isShow=false
+                binding.progressPagging.visibility = View.VISIBLE
                 current_page++
                 homeViewModel.getNews(current_page)
                 isScroling = false
